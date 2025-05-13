@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сторінка товарів</title>
+
+    <link href="./libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="./libs/datatables/datatables.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body data-page="products">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container">
+            <a class="navbar-brand" href="#">shop-crm</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMobile"
+                aria-controls="navbarMobile" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarMobile">
+                <div class="navbar-nav">
+                    <a class="nav-link active" aria-current="page" href="/">Home</a>
+                    <a class="nav-link" href="orders.html">Orders</a>
+                    <a class="nav-link" href="products.html">Products</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Add
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="order-add.html">Add product</a></li>
+                            <li><a class="dropdown-item" href="product-add.html">Add order</a></li>
+                        </ul>
+                    </li>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="page-order">
+        <div class="container">
+            <div class="page-header my-5 d-flex justify-content-between">
+                <h1 class="title">Products items</h1>
+
+                <a href="product-add.html" class="btn rounded-pill btn-primary btn-custom-lg btn-add-order">
+                    <i class="fa-solid fa-plus"></i>
+                    Add new Product
+                </a>
+            </div>
+
+            <ul class="nav nav-underline nav-status">
+                <li class="nav-product">
+                    <a class="nav-link active" aria-current="page" href="#">Всі</a>
+                </li>
+                <li class="nav-product">
+                    <a class="nav-link" href="#">В наявності</a>
+                </li>
+                <li class="nav-product">
+                    <a class="nav-link" href="#">Відсутні</a>
+                </li>
+                <li class="nav-product">
+                    <a class="nav-link" href="#">В дорозі</a>
+                </li>
+            </ul>
+
+
+            <!-- Таблиця замовлень -->
+            <div class="mt-5">
+                <table class="table table-bordered align-middle text-center table-hover table-data" id="product-table">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Артикул</th>
+                            <th>Назва товару</th>
+                            <th>Кількість</th>
+                            <th>Наявність</th>
+                            <th>Активність</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>HKP-001</td>
+                            <td>Планшет</td>
+                            <td>20</td>
+                            <td><span class="badge bg-success">В наявності</span></td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="btn btn-light btn-none-bg" data-bs-toggle="dropdown">
+                                        <svg>
+                                            <use href="#icon-dot"></use>
+                                        </svg>
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-lg-end">
+                                        <li><a class="dropdown-item" href="#">Edit</a></li>
+                                        <li class="dropdown-divider"></li>
+                                        <li><a class="dropdown-item text-danger " href="#">Delete</a></li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>HKP-003</td>
+                            <td>Планшет 3</td>
+                            <td>20</td>
+                            <td><span class="badge bg-success">В наявності</span></td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="btn btn-light btn-none-bg" data-bs-toggle="dropdown">
+                                        <svg>
+                                            <use href="#icon-dot"></use>
+                                        </svg>
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-lg-end">
+                                        <li><a class="dropdown-item" href="#">Edit</a></li>
+                                        <li class="dropdown-divider"></li>
+                                        <li><a class="dropdown-item text-danger " href="#">Delete</a></li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>HKP-002</td>
+                            <td>Планшет 2</td>
+                            <td>20</td>
+                            <td><span class="badge bg-success">В наявності</span></td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="btn btn-light btn-none-bg" data-bs-toggle="dropdown">
+                                        <svg>
+                                            <use href="#icon-dot"></use>
+                                        </svg>
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-lg-end">
+                                        <li><a class="dropdown-item" href="#">Edit</a></li>
+                                        <li class="dropdown-divider"></li>
+                                        <li><a class="dropdown-item text-danger " href="#">Delete</a></li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+
+
+            <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+                <symbol id="icon-dot" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="1"></circle>
+                    <circle cx="19" cy="12" r="1"></circle>
+                    <circle cx="5" cy="12" r="1"></circle>
+                </symbol>
+            </svg>
+
+            <script src="./libs/jquery/jquery-3.7.1.min.js"></script>
+            <script src="./libs/bootstrap/bootstrap.bundle.min.js"></script>
+            <script src="./libs/datatables/datatables.min.js"></script>
+            <script type="module" src="./js/script.js"></script>
+
+
+
+        </div>
+    </div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Авторизація менеджера</title>
+
+    <link href="./libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body data-page="index">
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container">
+            <a class="navbar-brand" href="#">shop-crm</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMobile"
+                aria-controls="navbarMobile" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarMobile">
+                <div class="navbar-nav">
+                    <a class="nav-link active" aria-current="page" href="/">Home</a>
+                    <a class="nav-link" href="orders.html">Orders</a>
+                    <a class="nav-link" href="products.html">Products</a>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Add
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="order-add.html">Add product</a></li>
+                            <li><a class="dropdown-item" href="product-add.html">Add order</a></li>
+                        </ul>
+                    </li>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="page-login">
+        <div class="container">
+            <form action="https://lessons.inderio.com/sendForm.php" class="form-login mx-auto" method="post">
+                <h1 class="fs-3 mb-3 mt-5">Форма авторизації</h1>
+
+                <!-- Email -->
+                <div class="form-floating mb-3">
+                    <input class="form-control" type="email" name="login" id="floatingInput" placeholder="E-mail"
+                        required>
+                    <label for="floatingInput">Email</label>
+                </div>
+
+                <!-- Password with icon -->
+                <div class="form-floating mb-1 position-relative">
+                    <input class="form-control" type="password" name="password" id="floatingPassword"
+                        placeholder="Password" required>
+                    <label for="floatingPassword">Password</label>
+
+                    <!-- Button with icon -->
+                    <button type="button"
+                        class="btn position-absolute top-50 end-0 translate-middle-y me-3 p-0 border-0 bg-transparent"
+                        id="togglePassword">
+                        <i class="fa-solid fa-lock" id="eyeIcon"></i>
+                    </button>
+                </div>
+
+                <!-- ССЫЛКА: Забыли пароль? -->
+                <div class="text-start mb-3">
+                    <a href="forgot.html" class="link-secondary">Forgot password?</a>
+                </div>
+
+                <!-- Button -->
+                <!-- <button class="btn btn-primary btn-submit">Log in</button> -->
+                <a href="orders.html" class="btn btn-primary btn-submit">Log in</a>
+
+            </form>
+        </div>
+    </div>
+
+    <script src="./libs/bootstrap/bootstrap.bundle.min.js"></script>
+    <script type="module" src="./js/script.js"></script>
+</body>
+
+</html>

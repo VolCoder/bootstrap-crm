@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сторінка замовлення</title>
+
+    <link href="./libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="./libs/datatables/datatables.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body data-page="orders">
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container">
+            <a class="navbar-brand" href="#">shop-crm</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMobile"
+                aria-controls="navbarMobile" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarMobile">
+                <div class="navbar-nav">
+                    <a class="nav-link active" aria-current="page" href="/">Home</a>
+                    <a class="nav-link" href="orders.html">Orders</a>
+                    <a class="nav-link" href="products.html">Products</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Add
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="order-add.html">Add product</a></li>
+                            <li><a class="dropdown-item" href="product-add.html">Add order</a></li>
+                        </ul>
+                    </li>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="page-order">
+        <div class="container">
+            <div class="page-header my-5 d-flex justify-content-between">
+                <h1 class="title">Orders list</h1>
+
+                <a href="#" class="btn rounded-pill btn-primary btn-custom-lg btn-add-order" data-bs-toggle="modal"
+                    data-bs-target="#modalAddOrder">
+                    <i class="fa-solid fa-plus"></i>
+                    Add new
+                </a>
+            </div>
+
+            <ul class="nav nav-underline nav-status">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Всі</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Виконано</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Повернуто</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">В процесі</a>
+                </li>
+            </ul>
+
+            <!-- Таблиця замовлень -->
+            <div class="mt-5">
+                <table class="table table-bordered align-middle text-center table-hover table-data">
+                    <thead class="table-light">
+                        <tr>
+                            <th>ID</th>
+                            <th>Клієнт</th>
+                            <th>Товар</th>
+                            <th>Дата</th>
+                            <th>Статус</th>
+                            <th>Активність</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>HKP-001</td>
+                            <td><span data-bs-toggle="tooltip" data-bs-title="Мирон Іван Васильйович">Іван</span></td>
+                            <td>Товари</td>
+                            <td>10.03.2025</td>
+                            <td><span class="badge bg-success">Виконано</span></td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="btn btn-light btn-none-bg" data-bs-toggle="dropdown">
+                                        <svg>
+                                            <use href="#icon-dot"></use>
+                                        </svg>
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-lg-end">
+                                        <li><a class="dropdown-item" href="#">Edit</a></li>
+                                        <li><a class="dropdown-item" href="#">Export</a></li>
+                                        <li class="dropdown-divider"></li>
+                                        <li><a class="dropdown-item text-danger " href="#">Delete</a></li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>PUY-002</td>
+                            <td><span data-bs-toggle="tooltip" data-bs-title="Мироненко Олена Василівна">Олена</span>
+                            </td>
+                            <td>
+                                <span data-bs-html="true" data-bs-toggle="tooltip"
+                                    data-bs-title="<ul class='list-unstyled'><li>Iphone 13</li><li>Iphone 10</li></ul>">Товари</span>
+
+                            </td>
+                            <td>12.03.2025</td>
+                            <td><span class="badge bg-danger">Повернуто</span></td>
+                            <td>DEL</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="modalAddOrder" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Add new order</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="orderForm" action="https://lessons.inderio.com/sendForm.php" class="mx-auto form-order">
+                        <div class="mb-3">
+                            <label class="form-label">ПІБ клієнта</label>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="ПІБ">
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Адреса доставки (Нова пошта, Укр пошта)</label>
+                            <input type="text" class="form-control" id="address" name="address" placeholder="Адреса">
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Товари для замовлення</label>
+                            <textarea class="form-control" id="product" name="product"></textarea>
+                        </div>
+
+                        <button class="w-100 btn btn-primary btn-lg" type="submit">Додати</button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <symbol id="icon-dot" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="1"></circle>
+            <circle cx="19" cy="12" r="1"></circle>
+            <circle cx="5" cy="12" r="1"></circle>
+        </symbol>
+    </svg>
+
+    <script src="./libs/just-validate/just-validate.production.min.js"></script>
+    <script src="./libs/jquery/jquery-3.7.1.min.js"></script>
+    <script src="./libs/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="./libs/datatables/datatables.min.js"></script>
+    <script type="module" src="./js/script.js"></script>
+</body>
+
+</html>
